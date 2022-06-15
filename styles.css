@@ -38,8 +38,6 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: auto;
 
-  background-color: #fff;
-
   font-family: "IBM Plex Sans", sans-serif;
 
   background-color: var(--left_bg);
