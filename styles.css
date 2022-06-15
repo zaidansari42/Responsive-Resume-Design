@@ -36,19 +36,53 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-auto-rows: auto;
 
   background-color: #fff;
 
   font-family: "IBM Plex Sans", sans-serif;
+
+  background-color: var(--left_bg);
+
+  grid-template-areas:
+    " pic pro"
+    " pic exp"
+    " contact exp"
+    " contact exp"
+    " edu exp"
+    "edu skills"
+    " lang abil"
+    ". abil";
+}
+
+.avatar {
+  grid-area: pic;
+}
+.contact_info {
+  grid-area: contact;
+}
+.education {
+  grid-area: edu;
+}
+.language {
+  grid-area: lang;
+}
+.profile {
+  grid-area: pro;
+}
+.exp {
+  grid-area: exp;
+}
+.skill {
+  grid-area: skills;
+}
+.ability {
+  grid-area: abil;
 }
 
 div.left_container {
-  background-color: var(--left_bg);
-
   height: 100%;
   width: 100%;
-
-  border: 5px solid rgb(0, 24, 34);
 }
 
 .avatar {
@@ -59,7 +93,7 @@ div.left_container {
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
-  max-width: 260px;
+  width: 90%;
 }
 
 .avatar img {
@@ -91,6 +125,12 @@ h1 {
 
 .contact_info {
   padding: 0 20px;
+}
+
+.education {
+}
+
+.language {
 }
 
 .title {
@@ -169,13 +209,6 @@ li span.percent {
   height: 100%;
 }
 
-div.right_container {
-  height: 100%;
-  width: 100%;
-
-  background-color: #fff;
-}
-
 .light {
   margin: 0 25px;
   margin-top: 5px;
@@ -194,9 +227,29 @@ div.right_container {
   font-weight: 400;
 }
 
+div.profile {
+  padding: 0.5em 1em;
+
+  background-color: #fff;
+}
+
+.profile p {
+  margin-top: 0.4em;
+}
+
 div.exp {
   display: flex;
   flex-direction: column;
+
+  background-color: #fff;
+}
+
+div.skill {
+  background-color: #fff;
+}
+
+div.ability {
+  background-color: #fff;
 }
 
 .company ul {
@@ -231,6 +284,11 @@ div.details {
 .details h3 {
   text-transform: uppercase;
 }
+
+.ability ul {
+  padding: 1em 0;
+}
+
 .skill ul,
 .ability ul {
   list-style-type: none;
@@ -242,8 +300,6 @@ div.details {
   background-color: var(--time);
 
   height: 70%;
-
-  /* border: 1px solid; */
 }
 
 .skill ul li span.percent div {
@@ -258,8 +314,6 @@ div.details {
   padding-left: 10px;
 
   align-items: center;
-
-  /* border: 1px solid; */
 }
 
 .skill ul li span.text {
@@ -293,31 +347,31 @@ div.details {
   cursor: default;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 930px) {
   #container {
     margin: 10px;
 
     grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
     transition: 1s;
-  }
 
-  .left_container {
-    grid-row: 2 / 3;
-
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      " pic "
+      " contact"
+      " pro "
+      " exp"
+      "skills"
+      "edu"
+      "abil"
+      "lang";
   }
 
   .education {
-    grid-row: 1 / 2;
+    filter: invert(1);
+    background-color: #000;
   }
-
-  .language {
-    grid-row: 2 / 3;
-  }
-
-  .avatar {
-    max-width: 95%;
+  .education ul li h5 {
+    color: rgb(255 209 188);
   }
 
   .contact_info ul {
